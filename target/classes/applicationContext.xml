@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define bean -->
+    <bean id="email" class="com.example.EmailService" />
+    <bean id="sms" class="com.example.SmsService" />
+
+
+    <bean id = "emailNotification" class = "com.example.NotificationService">
+       <constructor-arg ref="email"/>
+    </bean>
+
+     <bean id = "smsNotification" class = "com.example.NotificationService">
+       <constructor-arg ref="sms"/>
+    </bean>
+
+</beans>
